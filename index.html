@@ -7,6 +7,21 @@
     <meta name="description" content="Q-CORE: Industry-Level Interactive Educational Platform on Classical vs Quantum Microprocessors. Explore 3D chips, Bloch Sphere, CPU simulators, and Virtual Labs." />
     <title>Q-CORE | Quantum vs Classical Microprocessor Educational Experience</title>
     
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="color-scheme" content="light" />
+    
+    <!-- Force Bright theme immediately and purge any stale dark mode storage -->
+    <script>
+      try {
+        localStorage.clear();
+        sessionStorage.clear();
+      } catch (e) {}
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    </script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

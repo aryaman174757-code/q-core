@@ -6,31 +6,36 @@ const ThemeContext = createContext({
 });
 
 export function ThemeProvider({ children }) {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("qcore_theme_mode");
-      if (saved) return saved === "dark";
-      // Explicitly default to Bright (Light) Mode as requested
-      return false;
-    }
-    return false;
-  });
+  // Always default to false (Clean Bright theme)
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    // Purge any legacy dark keys
+    try {
+      localStorage.removeItem("qcore_theme");
+      localStorage.removeItem("qcore_theme_mode");
+      localStorage.removeItem("qcore_theme_v2");
+    } catch(e) {}
+    
+    // Explicitly enforce light mode on mount
     const root = document.documentElement;
-    if (isDark) {
-      root.classList.remove("light");
-      root.classList.add("dark");
-      localStorage.setItem("qcore_theme_mode", "dark");
-    } else {
-      root.classList.remove("dark");
-      root.classList.add("light");
-      localStorage.setItem("qcore_theme_mode", "light");
-    }
-  }, [isDark]);
+    root.classList.remove("dark");
+    root.classList.add("light");
+  }, []);
 
   const toggleTheme = () => {
-    setIsDark((prev) => !prev);
+    setIsDark((prev) => {
+      const next = !prev;
+      const root = document.documentElement;
+      if (next) {
+        root.classList.remove("light");
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+        root.classList.add("light");
+      }
+      return next;
+    });
   };
 
   return (
