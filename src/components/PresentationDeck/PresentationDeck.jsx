@@ -116,32 +116,32 @@ export default function PresentationDeck() {
     <section id="presentation" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/15 border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-['Orbitron'] font-semibold tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/60 text-blue-600 dark:text-blue-400 text-xs font-semibold tracking-wide">
               <GraduationCap className="w-3.5 h-3.5" />
-              Original College Presentation Section
+              Academic Presentation Archive
             </div>
-            <h2 className="font-['Orbitron'] font-bold text-3xl sm:text-4xl text-white tracking-tight">
-              Classroom Presentation Deck
+            <h2 className="font-['Plus_Jakarta_Sans'] font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+              Curriculum Presentation Deck
             </h2>
-            <p className="text-[#94A3B8] text-sm sm:text-base max-w-2xl leading-relaxed">
-              The exact slides as submitted and evaluated for <strong className="text-white">Computer Architecture and Organization</strong> at Dr. D. Y. Patil College of Engineering and Innovation.
+            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl leading-relaxed">
+              Official presentation slides submitted and evaluated for <strong className="text-slate-900 dark:text-white font-semibold">Computer Architecture and Organization</strong> at Dr. D. Y. Patil College of Engineering and Innovation.
             </p>
           </div>
 
           {/* Controls: Deck vs Grid & Downloads */}
           <div className="flex flex-wrap items-center gap-2.5">
-            <div className="p-1 rounded-xl bg-white/5 border border-white/10 flex items-center gap-1">
+            <div className="p-1 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 flex items-center gap-1 shadow-xs">
               <button
                 onClick={() => {
                   sound.playClick();
                   setViewMode("deck");
                 }}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   viewMode === "deck"
-                    ? "bg-[#00E5FF] text-black shadow-md"
-                    : "text-[#94A3B8] hover:text-white"
+                    ? "bg-blue-600 text-white shadow-xs"
+                    : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 }`}
               >
                 <Monitor className="w-3.5 h-3.5" />
@@ -152,10 +152,10 @@ export default function PresentationDeck() {
                   sound.playClick();
                   setViewMode("grid");
                 }}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   viewMode === "grid"
-                    ? "bg-[#00E5FF] text-black shadow-md"
-                    : "text-[#94A3B8] hover:text-white"
+                    ? "bg-blue-600 text-white shadow-xs"
+                    : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 }`}
               >
                 <Grid className="w-3.5 h-3.5" />
@@ -167,20 +167,20 @@ export default function PresentationDeck() {
             <a
               href={`${import.meta.env.BASE_URL}downloads/Quantum_vs_Classical_Microprocessor_DYPCOEI.pptx`}
               download="Quantum_vs_Classical_Microprocessor_DYPCOEI.pptx"
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 border border-white/15 hover:border-[#00E5FF] text-white text-xs font-mono font-bold transition-all hover:bg-white/10"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 hover:border-blue-500 text-slate-700 dark:text-slate-200 text-xs font-semibold transition-all shadow-xs"
               title="Download Original PowerPoint Presentation"
             >
-              <Download className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <Download className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
               <span>Download .PPTX</span>
             </a>
 
             <a
               href={`${import.meta.env.BASE_URL}downloads/Quantum_vs_Classical_Microprocessor_DYPCOEI.pdf`}
               download="Quantum_vs_Classical_Microprocessor_DYPCOEI.pdf"
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 border border-white/15 hover:border-[#7C4DFF] text-white text-xs font-mono font-bold transition-all hover:bg-white/10"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 hover:border-indigo-500 text-slate-700 dark:text-slate-200 text-xs font-semibold transition-all shadow-xs"
               title="Download Original PDF Presentation"
             >
-              <FileText className="w-3.5 h-3.5 text-[#7C4DFF]" />
+              <FileText className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
               <span>Download .PDF</span>
             </a>
           </div>
@@ -189,9 +189,9 @@ export default function PresentationDeck() {
         {/* 1. Presentation Mode (16:9 Cinematic Screen with exact slide) */}
         {viewMode === "deck" && (
           <div className="space-y-6">
-            <div className="glass-panel p-4 sm:p-6 rounded-3xl border border-white/15 space-y-4">
+            <div className="bg-white dark:bg-slate-900/70 p-4 sm:p-6 rounded-3xl border border-slate-200 dark:border-white/10 space-y-4 shadow-sm backdrop-blur-md">
               {/* Slide Screen Container (16:9 Aspect Ratio) */}
-              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl flex items-center justify-center group">
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl flex items-center justify-center group">
                 <img
                   src={`${import.meta.env.BASE_URL}slides/slide-${currentSlide}.png`}
                   alt={`Slide ${currentSlide}: ${slidesMeta[currentSlide - 1]?.title}`}
@@ -201,25 +201,25 @@ export default function PresentationDeck() {
                 {/* Left / Right Hover Arrows */}
                 <button
                   onClick={prevSlide}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center opacity-70 hover:opacity-100 hover:scale-110 transition-all glow-cyan"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700 text-white flex items-center justify-center opacity-70 hover:opacity-100 hover:scale-105 transition-all shadow-lg"
                   title="Previous Slide (or Left Arrow)"
                 >
-                  <ChevronLeft className="w-6 h-6" />
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center opacity-70 hover:opacity-100 hover:scale-110 transition-all glow-cyan"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700 text-white flex items-center justify-center opacity-70 hover:opacity-100 hover:scale-105 transition-all shadow-lg"
                   title="Next Slide (or Right Arrow)"
                 >
-                  <ChevronRight className="w-6 h-6" />
+                  <ChevronRight className="w-5 h-5" />
                 </button>
 
                 {/* Floating Top Badge */}
-                <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-xl border border-white/10 text-xs font-mono text-[#00E5FF]">
+                <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-xl border border-slate-700 text-xs font-semibold text-blue-400 shadow-xs">
                   Slide {currentSlide} of {totalSlides}
                 </div>
 
-                <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-xl border border-white/10 text-xs font-mono text-white/80">
+                <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-xl border border-slate-700 text-xs font-medium text-slate-300 shadow-xs">
                   {slidesMeta[currentSlide - 1]?.title}
                 </div>
               </div>
@@ -229,22 +229,22 @@ export default function PresentationDeck() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={prevSlide}
-                    className="px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white text-xs font-mono font-bold hover:bg-white/10"
+                    className="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-white text-xs font-semibold transition-all shadow-xs"
                   >
                     ← Previous
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="px-3.5 py-1.5 rounded-xl bg-[#00E5FF] text-black text-xs font-mono font-bold hover:bg-[#38BDF8]"
+                    className="px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition-all shadow-xs"
                   >
                     Next Slide →
                   </button>
                   <button
                     onClick={() => setIsPlaying(!isPlaying)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold border transition-all ${
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
                       isPlaying
-                        ? "bg-[#22C55E]/20 border-[#22C55E] text-[#22C55E]"
-                        : "bg-white/5 border-white/10 text-[#94A3B8] hover:text-white"
+                        ? "bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400"
+                        : "bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300"
                     }`}
                   >
                     {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
@@ -252,7 +252,7 @@ export default function PresentationDeck() {
                   </button>
                 </div>
 
-                <div className="text-xs font-mono text-[#94A3B8]">
+                <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                   Tip: Use keyboard ← → arrow keys to navigate slides
                 </div>
               </div>
@@ -260,7 +260,7 @@ export default function PresentationDeck() {
 
             {/* Thumbnail Strip */}
             <div className="space-y-2">
-              <span className="text-xs font-['Orbitron'] font-bold text-[#00E5FF] uppercase tracking-wider block">
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider block">
                 Slide Thumbnails:
               </span>
               <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-2">
@@ -268,15 +268,16 @@ export default function PresentationDeck() {
                   <button
                     key={s.num}
                     onClick={() => selectSlide(s.num)}
-                    className={`aspect-[16/9] rounded-xl overflow-hidden border transition-all relative group ${
+                    className={`relative aspect-[16/9] rounded-xl overflow-hidden border-2 transition-all group ${
                       currentSlide === s.num
-                        ? "border-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.4)] scale-105"
-                        : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
+                        ? "border-blue-600 shadow-sm scale-105"
+                        : "border-slate-200 dark:border-white/10 hover:border-blue-400 dark:hover:border-blue-500/50 opacity-70 hover:opacity-100"
                     }`}
+                    title={`Go to slide ${s.num}: ${s.title}`}
                   >
                     <img
                       src={`${import.meta.env.BASE_URL}slides/slide-${s.num}.png`}
-                      alt={`Thumbnail ${s.num}`}
+                      alt={s.title}
                       className="w-full h-full object-cover"
                     />
                     <span className="absolute bottom-1 left-1 bg-black/80 px-1 rounded text-[9px] font-mono text-white font-bold">
@@ -295,30 +296,30 @@ export default function PresentationDeck() {
             {slidesMeta.map((slide) => (
               <div
                 key={slide.num}
-                className="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-[#00E5FF]/40 transition-all duration-300 group flex flex-col justify-between"
+                className="bg-white dark:bg-slate-900/60 rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-blue-500/50 transition-all duration-200 group flex flex-col justify-between shadow-xs hover:shadow-sm"
               >
                 <div>
-                  <div className="relative aspect-[16/9] bg-black overflow-hidden">
+                  <div className="relative aspect-[16/9] bg-slate-950 overflow-hidden">
                     <img
                       src={`${import.meta.env.BASE_URL}slides/slide-${slide.num}.png`}
                       alt={slide.title}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      className="w-full h-full object-contain group-hover:scale-102 transition-transform duration-200 cursor-pointer"
                       onClick={() => {
                         sound.playClick();
                         setCurrentSlide(slide.num);
                         setViewMode("deck");
                       }}
                     />
-                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/80 text-[10px] font-mono font-bold text-[#00E5FF] border border-white/10">
+                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/80 text-[10px] font-mono font-bold text-blue-400 border border-white/10">
                       Slide 0{slide.num}
                     </div>
                   </div>
 
                   <div className="p-4 space-y-1.5">
-                    <h4 className="font-['Orbitron'] text-sm font-bold text-white group-hover:text-[#00E5FF] transition-colors">
+                    <h4 className="font-['Plus_Jakarta_Sans'] text-sm font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {slide.title}
                     </h4>
-                    <p className="text-xs text-[#94A3B8] leading-relaxed line-clamp-2">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
                       {slide.desc}
                     </p>
                   </div>
@@ -331,7 +332,7 @@ export default function PresentationDeck() {
                       setCurrentSlide(slide.num);
                       setViewMode("deck");
                     }}
-                    className="w-full py-2 rounded-xl bg-white/5 hover:bg-[#00E5FF] hover:text-black border border-white/10 text-xs font-mono font-bold transition-all text-center"
+                    className="w-full py-2 rounded-xl bg-slate-100 hover:bg-blue-600 hover:text-white dark:bg-white/5 dark:hover:bg-blue-600 dark:hover:text-white border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-all text-center shadow-xs"
                   >
                     View in Presentation Deck
                   </button>

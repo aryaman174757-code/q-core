@@ -62,19 +62,19 @@ export default function LabDashboard({ completedLabs = {}, onLabComplete }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
         {/* Flagship Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-[#00E5FF]/15 to-[#7C4DFF]/15 border border-[#00E5FF]/30 text-white text-xs font-['Orbitron'] font-semibold tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
-            Flagship Interactive Environment
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/60 text-blue-600 dark:text-blue-400 text-xs font-semibold tracking-wide">
+            <Sparkles className="w-3.5 h-3.5 text-blue-500" />
+            Interactive Simulation Suites
           </div>
-          <h2 className="font-['Orbitron'] font-bold text-3xl sm:text-4xl text-white tracking-tight">
+          <h2 className="font-['Plus_Jakarta_Sans'] font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
             Virtual Laboratories
           </h2>
-          <p className="text-[#94A3B8] text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
             Hands-on engineering simulation suites designed to bridge textbook computer architecture concepts with experimental quantum physics.
           </p>
         </div>
 
-        {/* 4 Laboratory Selection Glass Cards */}
+        {/* 4 Laboratory Selection Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {labCards.map((lab) => {
             const isSelected = activeLabId === lab.id;
@@ -85,59 +85,51 @@ export default function LabDashboard({ completedLabs = {}, onLabComplete }) {
               <button
                 key={lab.id}
                 onClick={() => handleSelectLab(lab.id)}
-                className={`p-5 rounded-3xl text-left glass-panel transition-all duration-300 relative overflow-hidden group flex flex-col justify-between ${
+                className={`p-5 rounded-3xl text-left bg-white dark:bg-slate-900/60 border transition-all duration-200 relative overflow-hidden group flex flex-col justify-between shadow-xs hover:shadow-sm ${
                   isSelected
-                    ? `border-[${lab.color}] shadow-[0_0_25px_rgba(0,229,255,0.25)] bg-[#0F172A] scale-[1.02]`
-                    : "hover:border-white/20 hover:bg-white/5 opacity-85 hover:opacity-100"
+                    ? "border-blue-600 ring-2 ring-blue-500/20 scale-[1.02]"
+                    : "border-slate-200 dark:border-white/10 hover:border-blue-400 dark:hover:border-white/20"
                 }`}
-                style={{
-                  borderColor: isSelected ? lab.color : undefined
-                }}
               >
-                {/* Ambient Top Glow */}
-                <div
-                  className={`absolute -top-12 -right-12 w-28 h-28 rounded-full blur-2xl opacity-20 pointer-events-none bg-gradient-to-br ${lab.accent}`}
-                />
-
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#94A3B8]">
+                    <span className="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">
                       LAB {lab.number}
                     </span>
                     {isCompleted ? (
-                      <span className="flex items-center gap-1 text-[10px] font-mono text-[#22C55E] bg-[#22C55E]/10 px-2 py-0.5 rounded-full border border-[#22C55E]/30">
+                      <span className="flex items-center gap-1 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800">
                         <CheckCircle2 className="w-3 h-3" />
                         Completed
                       </span>
                     ) : (
-                      <span className="text-[10px] font-mono text-[#94A3B8] px-2 py-0.5 rounded-full bg-white/5">
+                      <span className="text-[10px] font-medium text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded-full bg-slate-100 dark:bg-white/5">
                         Interactive
                       </span>
                     )}
                   </div>
 
                   <div
-                    className="w-10 h-10 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110"
-                    style={{ backgroundColor: `${lab.color}20`, border: `1px solid ${lab.color}50` }}
+                    className="w-10 h-10 rounded-2xl flex items-center justify-center transition-all group-hover:scale-105"
+                    style={{ backgroundColor: `${lab.color}15`, border: `1px solid ${lab.color}35` }}
                   >
                     <Icon className="w-5 h-5" style={{ color: lab.color }} />
                   </div>
 
                   <div>
-                    <h3 className="font-['Orbitron'] font-bold text-base text-white group-hover:text-[#00E5FF] transition-colors">
+                    <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-base text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {lab.title}
                     </h3>
-                    <p className="text-[11px] font-mono text-[#38BDF8] mt-0.5">
+                    <p className="text-[11px] font-medium text-blue-600 dark:text-blue-400 mt-0.5">
                       {lab.subtitle}
                     </p>
                   </div>
 
-                  <p className="text-xs text-[#94A3B8] line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
                     {lab.description}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-semibold" style={{ color: lab.color }}>
+                <div className="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-semibold" style={{ color: lab.color }}>
                   <span>{isSelected ? "Active Suite" : "Launch Lab"}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -147,7 +139,7 @@ export default function LabDashboard({ completedLabs = {}, onLabComplete }) {
         </div>
 
         {/* Active Lab Display Chamber */}
-        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/15 relative overflow-hidden">
+        <div className="bg-white dark:bg-slate-900/70 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-white/15 relative overflow-hidden shadow-sm backdrop-blur-md">
           {activeLabId === "lab1" && <Lab1_CPUExecution onLabComplete={onLabComplete} />}
           {activeLabId === "lab2" && <Lab2_QubitState onLabComplete={onLabComplete} />}
           {activeLabId === "lab3" && <Lab3_CircuitBuilder onLabComplete={onLabComplete} />}

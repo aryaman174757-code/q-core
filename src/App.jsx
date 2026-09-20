@@ -79,7 +79,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050B18] text-[#F8FAFC] selection:bg-[#00E5FF]/30 selection:text-[#00E5FF] relative overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#090D16] text-slate-900 dark:text-[#F8FAFC] selection:bg-blue-500/20 selection:text-blue-600 dark:selection:text-blue-400 relative overflow-x-hidden transition-colors duration-200">
       {/* Sticky Navigation Bar */}
       <Navbar
         activeSection={activeSection}

@@ -151,20 +151,18 @@ export default function AITutorOrb({
 
   return (
     <>
-      {/* Floating Glowing AI Orb Trigger */}
+      {/* Floating Professional AI Assistant Trigger */}
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => {
             sound.playQuantumBeep();
             onToggle();
           }}
-          className="relative w-14 h-14 rounded-full bg-gradient-to-tr from-[#7C4DFF] via-[#00E5FF] to-[#38BDF8] p-0.5 shadow-[0_0_30px_rgba(0,229,255,0.6)] hover:scale-110 active:scale-95 transition-all group"
-          title="Open Q-TUTOR AI Assistant"
+          className="relative w-13 h-13 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center group"
+          title="Open Q-TUTOR Academic Assistant"
         >
-          <div className="w-full h-full rounded-full bg-[#050B18] flex items-center justify-center relative overflow-hidden">
-            <Sparkles className="w-6 h-6 text-[#00E5FF] group-hover:text-white transition-colors animate-pulse" />
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#22C55E] border-2 border-[#050B18]" />
-          </div>
+          <Sparkles className="w-6 h-6 text-white transition-transform group-hover:rotate-12" />
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900" />
         </button>
       </div>
 
@@ -175,22 +173,22 @@ export default function AITutorOrb({
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.95 }}
-            className="fixed bottom-24 right-4 sm:right-6 z-50 w-[95vw] sm:w-[420px] max-h-[620px] rounded-3xl glass-panel border border-[#00E5FF]/40 shadow-[0_10px_50px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden bg-[#050B18]/95 backdrop-blur-2xl"
+            className="fixed bottom-24 right-4 sm:right-6 z-50 w-[95vw] sm:w-[420px] max-h-[620px] rounded-3xl border border-slate-200 dark:border-white/15 shadow-2xl flex flex-col overflow-hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl"
           >
             {/* Header */}
-            <div className="p-4 border-b border-white/10 flex items-center justify-between bg-white/5">
+            <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between bg-slate-50/80 dark:bg-white/5">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#00E5FF]/20 to-[#7C4DFF]/20 border border-[#00E5FF]/40 flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-[#00E5FF]" />
+                <div className="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
-                  <h4 className="font-['Orbitron'] text-xs font-bold text-white flex items-center gap-1.5">
+                  <h4 className="font-['Plus_Jakarta_Sans'] text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
                     <span>Q-TUTOR</span>
-                    <span className="text-[9px] px-1.5 py-0.2 rounded bg-[#00E5FF]/10 text-[#00E5FF] font-mono">
+                    <span className="text-[9px] px-1.5 py-0.2 rounded bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-mono">
                       AI Active
                     </span>
                   </h4>
-                  <p className="text-[10px] text-[#94A3B8] font-mono">
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400">
                     DYPCOEI Academic Assistant
                   </p>
                 </div>
@@ -204,7 +202,7 @@ export default function AITutorOrb({
                     else speak(messages[messages.length - 1]?.text);
                   }}
                   className={`p-1.5 rounded-lg border text-xs transition-all ${
-                    isSpeaking ? "bg-[#00E5FF]/20 border-[#00E5FF] text-[#00E5FF] animate-pulse" : "bg-white/5 border-white/10 text-[#94A3B8]"
+                    isSpeaking ? "bg-blue-50 dark:bg-blue-950/40 border-blue-300 text-blue-600 dark:text-blue-400" : "bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400"
                   }`}
                   title="Toggle Voice Narration"
                 >
@@ -218,7 +216,7 @@ export default function AITutorOrb({
                     onToggleHindi();
                   }}
                   className={`px-2 py-1 rounded-lg border text-[11px] font-bold transition-all ${
-                    hindiMode ? "bg-[#F59E0B]/20 border-[#F59E0B] text-[#F59E0B]" : "bg-white/5 border-white/10 text-[#94A3B8]"
+                    hindiMode ? "bg-amber-50 dark:bg-amber-950/40 border-amber-300 text-amber-600 dark:text-amber-400" : "bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400"
                   }`}
                 >
                   {hindiMode ? "हिंदी" : "EN"}
@@ -226,7 +224,7 @@ export default function AITutorOrb({
 
                 <button
                   onClick={onToggle}
-                  className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-[#94A3B8] hover:text-white"
+                  className="p-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -234,24 +232,24 @@ export default function AITutorOrb({
             </div>
 
             {/* Quick Action Smart Prompts */}
-            <div className="px-3 py-2 border-b border-white/5 flex items-center gap-1.5 overflow-x-auto text-[11px]">
+            <div className="px-3 py-2 border-b border-slate-200 dark:border-white/5 flex items-center gap-1.5 overflow-x-auto text-[11px]">
               <button
                 onClick={explainCurrentSection}
-                className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[#00E5FF] hover:bg-white/10 shrink-0 flex items-center gap-1"
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-blue-600 dark:text-blue-400 hover:bg-slate-200 dark:hover:bg-white/10 shrink-0 flex items-center gap-1"
               >
                 <BookOpen className="w-3 h-3" />
                 Explain Section
               </button>
               <button
                 onClick={handleSimpleExplanation}
-                className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[#7C4DFF] hover:bg-white/10 shrink-0 flex items-center gap-1"
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-indigo-600 dark:text-indigo-400 hover:bg-slate-200 dark:hover:bg-white/10 shrink-0 flex items-center gap-1"
               >
                 <Lightbulb className="w-3 h-3" />
                 Simple Analogies
               </button>
               <button
                 onClick={generateDynamicMCQ}
-                className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[#22C55E] hover:bg-white/10 shrink-0 flex items-center gap-1"
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 hover:bg-slate-200 dark:hover:bg-white/10 shrink-0 flex items-center gap-1"
               >
                 <HelpCircle className="w-3 h-3" />
                 Quick Quiz
@@ -268,17 +266,17 @@ export default function AITutorOrb({
                   <div
                     className={`max-w-[85%] p-3 rounded-2xl leading-relaxed ${
                       m.sender === "user"
-                        ? "bg-gradient-to-r from-[#00E5FF] to-[#38BDF8] text-[#050B18] font-semibold rounded-tr-none"
-                        : "bg-[#0F172A] border border-white/10 text-white rounded-tl-none space-y-1.5"
+                        ? "bg-blue-600 text-white font-medium rounded-tr-none shadow-xs"
+                        : "bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-slate-100 rounded-tl-none space-y-1.5 shadow-xs"
                     }`}
                   >
                     <p>{hindiMode && m.textHindi ? m.textHindi : m.text}</p>
                     {m.sender === "ai" && (
-                      <div className="flex items-center justify-between text-[10px] text-[#94A3B8] pt-1 border-t border-white/5">
+                      <div className="flex items-center justify-between text-[10px] text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-200 dark:border-white/5">
                         <span>Q-TUTOR • Verified</span>
                         <button
                           onClick={() => speak(hindiMode && m.textHindi ? m.textHindi : m.text, hindiMode ? "hi-IN" : "en-US")}
-                          className="hover:text-[#00E5FF] flex items-center gap-1"
+                          className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1"
                         >
                           <Volume2 className="w-3 h-3" />
                           Listen
@@ -291,11 +289,11 @@ export default function AITutorOrb({
 
               {/* Dynamic Interactive MCQ Card */}
               {activeQuizQuestion && (
-                <div className="p-3.5 rounded-2xl bg-[#0F172A] border border-[#22C55E]/40 space-y-2.5">
-                  <span className="text-[10px] font-['Orbitron'] font-bold text-[#22C55E] uppercase block">
+                <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-emerald-300 dark:border-emerald-600/40 space-y-2.5">
+                  <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase block">
                     Dynamic Practice Question:
                   </span>
-                  <p className="text-white font-semibold">
+                  <p className="text-slate-900 dark:text-white font-semibold">
                     {hindiMode ? activeQuizQuestion.qHi : activeQuizQuestion.q}
                   </p>
 
@@ -314,11 +312,11 @@ export default function AITutorOrb({
                           className={`w-full text-left p-2 rounded-xl text-xs font-mono transition-all border ${
                             quizSelectedOption !== null
                               ? isCorrect
-                                ? "bg-[#22C55E]/20 border-[#22C55E] text-[#22C55E] font-bold"
+                                ? "bg-emerald-50 dark:bg-emerald-950/40 border-emerald-400 text-emerald-700 dark:text-emerald-300 font-bold"
                                 : isSelected
-                                ? "bg-[#EF4444]/20 border-[#EF4444] text-[#EF4444]"
-                                : "bg-white/5 border-white/5 text-gray-400"
-                              : "bg-white/5 border-white/10 hover:border-[#00E5FF] text-white"
+                                ? "bg-rose-50 dark:bg-rose-950/40 border-rose-400 text-rose-700 dark:text-rose-300"
+                                : "bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/5 text-slate-400"
+                              : "bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 hover:border-blue-500 text-slate-800 dark:text-white"
                           }`}
                         >
                           {opt}
@@ -333,18 +331,18 @@ export default function AITutorOrb({
             </div>
 
             {/* Input Bar */}
-            <div className="p-3 border-t border-white/10 bg-[#050B18] flex items-center gap-2">
+            <div className="p-3 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-slate-950 flex items-center gap-2">
               <input
                 type="text"
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                placeholder={hindiMode ? "क्वांटम या क्लासिकल के बारे में पूछें..." : "Ask doubt (e.g. why 15 mK?)..."}
-                className="flex-1 bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder-gray-500 focus:border-[#00E5FF] focus:outline-none font-mono"
+                placeholder={hindiMode ? "क्वांटम या क्लासिकल के बारे में पूछें..." : "Ask question (e.g. why 15 mK?)..."}
+                className="flex-1 bg-white dark:bg-black/40 border border-slate-200 dark:border-white/10 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500 focus:border-blue-500 focus:outline-none"
               />
               <button
                 onClick={() => handleSend()}
-                className="p-2 rounded-xl bg-[#00E5FF] text-black hover:bg-[#38BDF8] transition-all"
+                className="p-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-xs"
               >
                 <Send className="w-4 h-4" />
               </button>

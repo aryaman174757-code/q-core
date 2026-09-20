@@ -114,13 +114,13 @@ export default function ApplicationsGallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22C55E]/15 border border-[#22C55E]/30 text-[#22C55E] text-xs font-['Orbitron'] font-semibold tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-600 dark:text-emerald-400 text-xs font-semibold tracking-wide">
             <span>Global Applications</span>
           </div>
-          <h2 className="font-['Orbitron'] font-bold text-3xl sm:text-4xl text-white tracking-tight">
+          <h2 className="font-['Plus_Jakarta_Sans'] font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
             Real-World Industry Frontiers
           </h2>
-          <p className="text-[#94A3B8] text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
             Directly from Slides 3 & 6 of the academic presentation: how classical microprocessors empower today's world, and how quantum processors will reshape tomorrow.
           </p>
         </div>
@@ -133,31 +133,31 @@ export default function ApplicationsGallery() {
               <button
                 key={app.id}
                 onClick={() => handleOpen(app)}
-                className="glass-panel p-6 rounded-3xl border border-white/10 hover:border-[#00E5FF]/40 text-left transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 relative overflow-hidden"
+                className="bg-white dark:bg-slate-900/60 p-6 rounded-3xl border border-slate-200 dark:border-white/10 hover:border-blue-500/50 text-left transition-all duration-200 group flex flex-col justify-between hover:-translate-y-0.5 relative overflow-hidden shadow-xs hover:shadow-sm"
               >
                 <div className="space-y-4">
                   <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
-                    style={{ backgroundColor: `${app.color}20`, border: `1px solid ${app.color}50` }}
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform"
+                    style={{ backgroundColor: `${app.color}15`, border: `1px solid ${app.color}35` }}
                   >
                     <Icon className="w-6 h-6" style={{ color: app.color }} />
                   </div>
 
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#94A3B8] block mb-1">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
                       {app.category}
                     </span>
-                    <h3 className="font-['Orbitron'] text-base font-bold text-white group-hover:text-[#00E5FF] transition-colors">
+                    <h3 className="font-['Plus_Jakarta_Sans'] text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {app.title}
                     </h3>
                   </div>
 
-                  <p className="text-xs text-[#94A3B8] line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
                     {app.summary}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono font-semibold" style={{ color: app.color }}>
+                <div className="mt-6 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-semibold" style={{ color: app.color }}>
                   <span>Inspect Case Study</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -173,20 +173,20 @@ export default function ApplicationsGallery() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#050B18]/85 backdrop-blur-2xl"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 dark:bg-black/80 backdrop-blur-md"
               onClick={handleClose}
             >
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
+                exit={{ scale: 0.95, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/20 max-w-2xl w-full relative space-y-6 shadow-2xl"
+                className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-white/15 max-w-2xl w-full relative space-y-6 shadow-2xl"
               >
                 {/* Close Button */}
                 <button
                   onClick={handleClose}
-                  className="absolute top-5 right-5 p-2 rounded-xl bg-white/5 border border-white/10 text-[#94A3B8] hover:text-white"
+                  className="absolute top-5 right-5 p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -194,55 +194,55 @@ export default function ApplicationsGallery() {
                 <div className="flex items-center gap-3">
                   <div
                     className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                    style={{ backgroundColor: `${selectedApp.color}20`, border: `1px solid ${selectedApp.color}50` }}
+                    style={{ backgroundColor: `${selectedApp.color}15`, border: `1px solid ${selectedApp.color}35` }}
                   >
                     <selectedApp.icon className="w-6 h-6" style={{ color: selectedApp.color }} />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-[#00E5FF] font-bold">
+                    <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">
                       {selectedApp.category}
                     </span>
-                    <h3 className="font-['Orbitron'] text-xl sm:text-2xl font-bold text-white">
+                    <h3 className="font-['Plus_Jakarta_Sans'] text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
                       {selectedApp.title}
                     </h3>
                   </div>
                 </div>
 
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   {selectedApp.summary}
                 </p>
 
                 {/* Classical vs Quantum Breakdown */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Classical Role */}
-                  <div className="p-4 rounded-2xl bg-[#050B18]/70 border border-[#00E5FF]/30 space-y-2">
-                    <div className="flex items-center gap-2 text-xs font-['Orbitron'] font-bold text-[#00E5FF]">
+                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-blue-200 dark:border-blue-900/40 space-y-2">
+                    <div className="flex items-center gap-2 text-xs font-bold text-blue-600 dark:text-blue-400">
                       <Cpu className="w-4 h-4" />
                       <span>Classical Approach (Slide 3)</span>
                     </div>
-                    <p className="text-xs text-[#94A3B8] leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                       {selectedApp.classicalRole}
                     </p>
                   </div>
 
                   {/* Quantum Role */}
-                  <div className="p-4 rounded-2xl bg-[#050B18]/70 border border-[#7C4DFF]/40 space-y-2 glow-purple">
-                    <div className="flex items-center gap-2 text-xs font-['Orbitron'] font-bold text-[#7C4DFF]">
+                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-indigo-200 dark:border-indigo-900/40 space-y-2">
+                    <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-indigo-400">
                       <Atom className="w-4 h-4" />
                       <span>Quantum Advantage (Slide 6)</span>
                     </div>
-                    <p className="text-xs text-[#94A3B8] leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                       {selectedApp.quantumRole}
                     </p>
                   </div>
                 </div>
 
                 {/* Case Study Callout */}
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-                  <span className="text-[10px] uppercase font-mono font-bold text-white tracking-wider block">
+                <div className="p-4 rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-slate-900 dark:text-white tracking-wider block">
                     Real-World Implementation Case Study:
                   </span>
-                  <p className="text-xs text-[#94A3B8]">
+                  <p className="text-xs text-slate-600 dark:text-slate-300">
                     {selectedApp.caseStudy}
                   </p>
                 </div>
@@ -250,9 +250,9 @@ export default function ApplicationsGallery() {
                 <div className="flex justify-end">
                   <button
                     onClick={handleClose}
-                    className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-mono font-bold transition-all"
+                    className="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 text-slate-800 dark:text-white text-xs font-semibold transition-all shadow-xs"
                   >
-                    Close Application Modal
+                    Close Overview
                   </button>
                 </div>
               </motion.div>
