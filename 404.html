@@ -7,12 +7,27 @@
     <meta name="description" content="Q-CORE: Industry-Level Interactive Educational Platform on Classical vs Quantum Microprocessors. Explore 3D chips, Bloch Sphere, CPU simulators, and Virtual Labs." />
     <title>Q-CORE | Quantum vs Classical Microprocessor Educational Experience</title>
     
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="color-scheme" content="light" />
+    
+    <!-- Force Bright theme immediately and purge any stale dark mode storage -->
+    <script>
+      try {
+        localStorage.clear();
+        sessionStorage.clear();
+      } catch (e) {}
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    </script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/q-core/assets/index-8F3KN1dt.js"></script>
-    <link rel="stylesheet" crossorigin href="/q-core/assets/index-BjQsRwAs.css">
+    <script type="module" crossorigin src="/q-core/assets/index-CPVHpHHD.js"></script>
+    <link rel="stylesheet" crossorigin href="/q-core/assets/index-BBGEb0qt.css">
   </head>
   <body class="bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-[#F8FAFC] antialiased selection:bg-blue-500/20 selection:text-blue-600 overflow-x-hidden min-h-screen transition-colors duration-200">
     <div id="root"></div>
