@@ -1,18 +1,19 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext({
-  isDark: true,
+  isDark: false,
   toggleTheme: () => {}
 });
 
 export function ThemeProvider({ children }) {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("qcore_theme");
+      const saved = localStorage.getItem("qcore_theme_mode");
       if (saved) return saved === "dark";
-      return true; // default to sleek dark mode
+      // Explicitly default to Bright (Light) Mode as requested
+      return false;
     }
-    return true;
+    return false;
   });
 
   useEffect(() => {
@@ -20,11 +21,11 @@ export function ThemeProvider({ children }) {
     if (isDark) {
       root.classList.remove("light");
       root.classList.add("dark");
-      localStorage.setItem("qcore_theme", "dark");
+      localStorage.setItem("qcore_theme_mode", "dark");
     } else {
       root.classList.remove("dark");
       root.classList.add("light");
-      localStorage.setItem("qcore_theme", "light");
+      localStorage.setItem("qcore_theme_mode", "light");
     }
   }, [isDark]);
 
